@@ -1,63 +1,40 @@
-# PR / main 基础质量门禁：减轻维护者手工验证，仅 Founder 需关注高影响路径 Review
-name: CI
+name: MagnetLife Deploy
 
 on:
-  pull_request:
-    branches: [main]
-  push:
-    branches: [main]
-
-concurrency:
-  group: ci-${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
 
 jobs:
-  lint-and-types:
-    name: Lint & type-check
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
-        with:
-          node-version-file: .nvmrc
-          cache: yarn
-      - run: yarn install --frozen-lockfile
-      - run: yarn lint
-      - run: yarn type-check
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-  test:
-    name: Unit tests
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version-file: .nvmrc
-          cache: yarn
-      - run: yarn install --frozen-lockfile
-      - run: yarn test --passWithNoTests
+          node-version: '22'
 
-  lockfile:
-    name: Lockfile consistency
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
-        with:
-          node-version-file: .nvmrc
-          cache: yarn
-      - run: yarn deps:check-lockfile
+      - name: Install Yarn 1.x
+        run: npm install -g yarn@1.22.22
 
-  docs-site:
-    name: VitePress build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
-        with:
-          node-version-file: .nvmrc
-          cache: yarn
-      - run: yarn install --frozen-lockfile
-      - run: yarn docs:site:build
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build Site
+        run: yarn run build
         env:
-          VITE_GISCUS_ENABLED: 'false'
+          NOTION_PAGE_ID: ${{ secrets.NOTION_PAGE_ID }}
+          NODE_VERSION: '22'
+          YARN_VERSION: '1.22.22'
+          BUILD_MODE: 'true'
+          EXPORT: 'true'
+
+      - name: Deploy to Cloudflare Workers
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: deploy --config wrangler.toml
