@@ -1,10 +1,9 @@
-name: Scheduled Deploy to Cloudflare
+name: MagnetLife Deploy
 
 on:
   schedule:
-    # هر روز ساعت ۰۰:۰۰ UTC (حدود ۳:۳۰ بامداد تهران) اجرا میشه
     - cron: '0 0 * * *'
-  workflow_dispatch: # اجازه میده دستی هم از تب Actions اجراش کنی
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -27,22 +26,15 @@ jobs:
       - name: Build Site
         run: yarn run build
         env:
-          # متغیرهای ضروری برای بیلد (باید توی Secrets گیت‌هاب ست بشن)
           NOTION_PAGE_ID: ${{ secrets.NOTION_PAGE_ID }}
           NODE_VERSION: '22'
           YARN_VERSION: '1.22.22'
           BUILD_MODE: 'true'
           EXPORT: 'true'
-          # اگر تنظیمات ظاهری خاصی داری (مثل عنوان و توضیحات)، اینجا اضافه کن:
-          # NEXT_PUBLIC_TITLE: "MagnetLife"
-          # NEXT_PUBLIC_DESCRIPTION: "مگنتا لایف؛ آهنربای دانش، فناوری و اقتصاد دیجیتال"
 
       - name: Deploy to Cloudflare Workers
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: deploy
-
-
-# test deploy
+          command: deploy --config wrangler.toml
