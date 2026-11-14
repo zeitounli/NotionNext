@@ -1,1 +1,41 @@
+name: Scheduled Deploy to Cloudflare
 
+on:
+  schedule:
+    # این خط یعنی هر روز ساعت ۰۰:۰۰ UTC (حدود ۳:۳۰ بامداد تهران) اجرا بشه
+    - cron: '0 0 * * *'
+  workflow_dispatch: # این خط اجازه میده دستی هم از تب Actions اجراش کنی
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install Yarn
+        run: npm install -g yarn@1.22.22
+
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build Site
+        run: yarn build
+        env:
+          NOTION_PAGE_ID: ${{ secrets.NOTION_PAGE_ID }}
+          # اینجا بقیه‌ی متغیرهای محیطی که توی کلادفلر تنظیم کردی رو هم اضافه کن
+          # مثلا:
+          # NEXT_PUBLIC_TITLE: "MagnetLife"
+          # NEXT_PUBLIC_DESCRIPTION: "..."
+
+      - name: Deploy to Cloudflare Workers
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: deploy
