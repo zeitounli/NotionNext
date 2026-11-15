@@ -12,6 +12,7 @@ const BLOG = {
     '75d9ff6f9d0c83bfa77f01080e367462',
 
   // 🎨 تنظیمات ظاهری و برند
+  TITLE: process.env.NEXT_PUBLIC_TITLE || 'MagnetLife',
   THEME: process.env.NEXT_PUBLIC_THEME || 'hexo',
   LANG: process.env.NEXT_PUBLIC_LANG || 'fa-IR',
   SINCE: process.env.NEXT_PUBLIC_SINCE || 2024,
@@ -19,17 +20,18 @@ const BLOG = {
   APPEARANCE: process.env.NEXT_PUBLIC_APPEARANCE || 'light',
   APPEARANCE_DARK_TIME: process.env.NEXT_PUBLIC_APPEARANCE_DARK_TIME || [18, 6],
 
-  // 👤 اطلاعات نویسنده و برند
-  AUTHOR: process.env.NEXT_PUBLIC_AUTHOR || 'MagnetLife',
+  // 👤 اطلاعات نویسنده و برند (تغییرات اعمال شد)
+  AUTHOR: process.env.NEXT_PUBLIC_AUTHOR || 'تیم مگنتا لایف',
   BIO: process.env.NEXT_PUBLIC_BIO || 'دریچه‌ای به اقتصاد دیجیتال، فناوری و روان‌شناسی ترید',
   LINK: process.env.NEXT_PUBLIC_LINK || 'https://magnetlife.pages.dev',
   KEYWORDS: process.env.NEXT_PUBLIC_KEYWORD || 'مگنتا لایف, ترید, ارز دیجیتال, مدیریت سرمایه, اقتصاد دیجیتال',
-  BLOG_FAVICON: process.env.NEXT_PUBLIC_FAVICON || '/favicon.ico',
+  
+  // 🖼️ لوگوی سایت (تغییرات اعمال شد)
+  BLOG_FAVICON: process.env.NEXT_PUBLIC_FAVICON || 'https://i.imgur.com/fPU4I4E.png',
 
   // 📱 تنظیمات PWA
   PWA_ENABLE: process.env.NEXT_PUBLIC_PWA_ENABLE || false,
-  // ... (بقیه تنظیمات PWA مثل قبل)
-
+  
   // 📡 تنظیمات RSS
   ENABLE_RSS: process.env.NEXT_PUBLIC_ENABLE_RSS || true,
   RSS_FULL_CONTENT: process.env.RSS_FULL_CONTENT || true,
@@ -77,9 +79,7 @@ const BLOG = {
   UUID_REDIRECT: process.env.UUID_REDIRECT || false,
   INNER_PAGE_URL_PARENT_PATH: process.env.NEXT_PUBLIC_INNER_PAGE_URL_PARENT_PATH || false,
 
-  // 🚫 فیلتر کردن محتوای اضافی (پاکسازی چینی‌ها)
-  // فقط مطالبی که توی نوشن نوشتی و تگ 'Persian' یا 'منتشر شده' دارن رو نشون بده
-  // این یه فیلتر ساده‌ست که از نمایش محتوای پیش‌فرض جلوگیری می‌کنه
-  CUSTOM_FILTER: process.env.CUSTOM_FILTER || '', // اگه خواستی دستی تنظیم کنی
+  // 🚫 فیلتر کردن محتوای اضافی
+  CUSTOM_FILTER: process.env.CUSTOM_FILTER || '',
 }
 module.exports = BLOG
