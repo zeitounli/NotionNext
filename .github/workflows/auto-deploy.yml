@@ -1,10 +1,10 @@
-name: Automatic Deploy
+name: Deploy to Cloudflare Pages
 
 on:
   schedule:
-    # هر ۵ دقیقه یک بار اجرا میشه (برای تغییر زمان، عدد 5 رو عوض کن)
+    # هر ۵ دقیقه یک بار اجرا میشه
     - cron: '*/5 * * * *'
-  workflow_dispatch: # اجازه میده دستی هم اجراش کنی
+  workflow_dispatch: # برای اجرای دستی
 
 jobs:
   deploy:
@@ -33,9 +33,4 @@ jobs:
           BUILD_MODE: 'true'
           EXPORT: 'true'
 
-      - name: Deploy to Cloudflare Workers
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: deploy --config wrangler.toml
+      # دیپلوی رو به کلادفلر Pages خودش می‌سپاریم
