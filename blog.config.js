@@ -21,7 +21,7 @@ const BLOG = {
   APPEARANCE_DARK_TIME: process.env.NEXT_PUBLIC_APPEARANCE_DARK_TIME || [18, 6],
 
   // 👤 اطلاعات نویسنده و برند (تغییرات اعمال شد)
-  AUTHOR: process.env.NEXT_PUBLIC_AUTHOR || 'تیم مگنتا لایف',
+
   BIO: process.env.NEXT_PUBLIC_BIO || 'دریچه‌ای به اقتصاد دیجیتال، فناوری و روان‌شناسی ترید',
   LINK: process.env.NEXT_PUBLIC_LINK || 'https://magnetlife.pages.dev',
   KEYWORDS: process.env.NEXT_PUBLIC_KEYWORD || 'مگنتا لایف, ترید, ارز دیجیتال, مدیریت سرمایه, اقتصاد دیجیتال',
