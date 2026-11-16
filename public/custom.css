@@ -1,9 +1,9 @@
 /* ═══════════════════════════════════════════════════════════════
-   🎨 MAGNETLIFE CUSTOM STYLES - کادر برای همه پاراگراف‌ها
+   🎨 MAGNETLIFE CUSTOM STYLES - کادر برای پاراگراف‌های مقاله
    ═══════════════════════════════════════════════════════════════ */
 
-/* هدف‌گیری تمام تگ‌های پاراگراف در کل سایت */
-p {
+/* کلاس اصلی پاراگراف در قالب hexo */
+.notion-text {
     background-color: #ffffff !important; 
     border: 1px solid #eaeaea !important; 
     border-radius: 12px !important; 
@@ -14,24 +14,23 @@ p {
     transition: all 0.3s ease !important; 
 }
 
-/* افکت هاور (وقتی موس روی متن میره) */
-p:hover {
+/* افکت هاور */
+.notion-text:hover {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08) !important; 
     transform: translateY(-2px) !important; 
 }
 
-/* حالت تاریک (Dark Mode) */
-.dark p {
+/* حالت تاریک */
+.dark .notion-text {
     background-color: #1a1a2e !important; 
     border-color: #2a2a4a !important; 
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
 }
 
-/* جلوگیری از اعمال کادر روی منوها، هدر و فوتر */
-.header p, .footer p, .nav p, .menu p, .sidebar p {
+/* جلوگیری از اعمال روی لیست‌ها و کدها */
+.notion-text code, .notion-text a {
     background: transparent !important;
     border: none !important;
     box-shadow: none !important;
     padding: 0 !important;
-    margin: 0 !important;
 }
