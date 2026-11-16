@@ -1,36 +1,40 @@
 /* ═══════════════════════════════════════════════════════════════
-   🎨 MAGNETLIFE CUSTOM STYLES - کادر برای پاراگراف‌های مقاله
+   🎨 MAGNETLIFE CUSTOM STYLES - کادر برای متن‌های مقاله
    ═══════════════════════════════════════════════════════════════ */
 
-/* کلاس اصلی پاراگراف در قالب hexo */
-.notion-text {
+/* هدف‌گیری تمام بلوک‌های متنی داخل مقاله */
+.notion-page-content div[class*="block"],
+.notion-page-content div[style*="white-space"],
+.article-content div,
+main div[class*="notion"] {
     background-color: #ffffff !important; 
     border: 1px solid #eaeaea !important; 
     border-radius: 12px !important; 
     padding: 16px 20px !important; 
-    margin-bottom: 16px !important; 
+    margin-bottom: 12px !important; 
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important; 
-    line-height: 1.8 !important; 
     transition: all 0.3s ease !important; 
 }
 
 /* افکت هاور */
-.notion-text:hover {
+.notion-page-content div[class*="block"]:hover,
+.article-content div:hover {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08) !important; 
     transform: translateY(-2px) !important; 
 }
 
 /* حالت تاریک */
-.dark .notion-text {
+.dark .notion-page-content div[class*="block"],
+.dark .article-content div {
     background-color: #1a1a2e !important; 
     border-color: #2a2a4a !important; 
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
 }
 
-/* جلوگیری از اعمال روی لیست‌ها و کدها */
-.notion-text code, .notion-text a {
+/* جلوگیری از اعمال روی هدر، منو و فوتر */
+header div, footer div, nav div, .sidebar div, .menu div {
     background: transparent !important;
     border: none !important;
     box-shadow: none !important;
     padding: 0 !important;
+    margin: 0 !important;
 }
