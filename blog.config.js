@@ -60,7 +60,8 @@ const BLOG = {
 
   // 📜 اسکریپت‌ها و استایل‌های خارجی
   CUSTOM_EXTERNAL_JS: [],
-  CUSTOM_EXTERNAL_CSS: [],
+  CUSTOM_EXTERNAL_CSS: ['/custom.css'],
+  
 
   // 📋 منوها و کپی‌رایت
   CUSTOM_MENU: process.env.NEXT_PUBLIC_CUSTOM_MENU || true,
