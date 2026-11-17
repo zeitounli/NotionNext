@@ -20,8 +20,9 @@ const BLOG = {
   APPEARANCE: process.env.NEXT_PUBLIC_APPEARANCE || 'light',
   APPEARANCE_DARK_TIME: process.env.NEXT_PUBLIC_APPEARANCE_DARK_TIME || [18, 6],
 
-  // 👤 اطلاعات نویسنده و برند (تغییرات اعمال شد)
-
+  // 👤 اطلاعات نویسنده و برند 
+  // (مقدار AUTHOR رو خالی گذاشتیم تا باکس پیش‌فرض چینی نمایش داده نشه)
+  AUTHOR: process.env.NEXT_PUBLIC_AUTHOR || '',
   BIO: process.env.NEXT_PUBLIC_BIO || 'دریچه‌ای به اقتصاد دیجیتال، فناوری و روان‌شناسی ترید',
   LINK: process.env.NEXT_PUBLIC_LINK || 'https://magnetlife.pages.dev',
   KEYWORDS: process.env.NEXT_PUBLIC_KEYWORD || 'مگنتا لایف, ترید, ارز دیجیتال, مدیریت سرمایه, اقتصاد دیجیتال',
@@ -61,7 +62,6 @@ const BLOG = {
   // 📜 اسکریپت‌ها و استایل‌های خارجی
   CUSTOM_EXTERNAL_JS: [],
   CUSTOM_EXTERNAL_CSS: ['/custom.css'],
-  
 
   // 📋 منوها و کپی‌رایت
   CUSTOM_MENU: process.env.NEXT_PUBLIC_CUSTOM_MENU || true,
