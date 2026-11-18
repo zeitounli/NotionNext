@@ -13,7 +13,7 @@ const BLOG = {
 
   // 🎨 تنظیمات ظاهری و برند
   TITLE: process.env.NEXT_PUBLIC_TITLE || 'مگنتا لایف | بایو دیسک و درمان مغناطیسی',
-  THEME: process.env.NEXT_PUBLIC_THEME || 'hexo',
+  THEME: process.env.NEXT_PUBLIC_THEME || 'nobelium', // تغییر به قالب مینیمال و بدون باگ
   LANG: process.env.NEXT_PUBLIC_LANG || 'fa-IR',
   SINCE: process.env.NEXT_PUBLIC_SINCE || 2024,
   PSEUDO_STATIC: process.env.NEXT_PUBLIC_PSEUDO_STATIC || false,
@@ -21,13 +21,12 @@ const BLOG = {
   APPEARANCE_DARK_TIME: process.env.NEXT_PUBLIC_APPEARANCE_DARK_TIME || [18, 6],
 
   // 👤 اطلاعات نویسنده و برند 
-  // (مقدار AUTHOR رو خالی گذاشتیم تا باکس پیش‌فرض چینی نمایش داده نشه)
   AUTHOR: process.env.NEXT_PUBLIC_AUTHOR || '',
   BIO: process.env.NEXT_PUBLIC_BIO || 'مرجع تخصصی بایو دیسک، مکمل درمانی مغناطیسی، احیای سلولی و سلامت. با ما مسیر درمان بدون دارو و بازگشت به سلامت را بشناسید.',
   LINK: process.env.NEXT_PUBLIC_LINK || 'https://magnetlife.pages.dev',
   KEYWORDS: process.env.NEXT_PUBLIC_KEYWORD || 'بایو دیسک, مکمل درمانی مغناطیسی, احیای سلولی, درمان مغناطیسی, سلامت, دیسک کمر, درمان بدون دارو',
   
-  // 🖼️ لوگوی سایت (تغییرات اعمال شد)
+  // 🖼️ لوگوی سایت
   BLOG_FAVICON: process.env.NEXT_PUBLIC_FAVICON || 'https://i.imgur.com/fPU4I4E.png',
 
   // 📱 تنظیمات PWA
