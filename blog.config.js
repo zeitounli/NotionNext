@@ -12,7 +12,7 @@ const BLOG = {
     '75d9ff6f9d0c83bfa77f01080e367462',
 
   // 🎨 تنظیمات ظاهری و برند
-  TITLE: process.env.NEXT_PUBLIC_TITLE || 'MagnetLife',
+  TITLE: process.env.NEXT_PUBLIC_TITLE || 'مگنتا لایف | بایو دیسک و درمان مغناطیسی',
   THEME: process.env.NEXT_PUBLIC_THEME || 'hexo',
   LANG: process.env.NEXT_PUBLIC_LANG || 'fa-IR',
   SINCE: process.env.NEXT_PUBLIC_SINCE || 2024,
@@ -23,9 +23,9 @@ const BLOG = {
   // 👤 اطلاعات نویسنده و برند 
   // (مقدار AUTHOR رو خالی گذاشتیم تا باکس پیش‌فرض چینی نمایش داده نشه)
   AUTHOR: process.env.NEXT_PUBLIC_AUTHOR || '',
-  BIO: process.env.NEXT_PUBLIC_BIO || 'دریچه‌ای به اقتصاد دیجیتال، فناوری و روان‌شناسی ترید',
+  BIO: process.env.NEXT_PUBLIC_BIO || 'مرجع تخصصی بایو دیسک، مکمل درمانی مغناطیسی، احیای سلولی و سلامت. با ما مسیر درمان بدون دارو و بازگشت به سلامت را بشناسید.',
   LINK: process.env.NEXT_PUBLIC_LINK || 'https://magnetlife.pages.dev',
-  KEYWORDS: process.env.NEXT_PUBLIC_KEYWORD || 'مگنتا لایف, ترید, ارز دیجیتال, مدیریت سرمایه, اقتصاد دیجیتال',
+  KEYWORDS: process.env.NEXT_PUBLIC_KEYWORD || 'بایو دیسک, مکمل درمانی مغناطیسی, احیای سلولی, درمان مغناطیسی, سلامت, دیسک کمر, درمان بدون دارو',
   
   // 🖼️ لوگوی سایت (تغییرات اعمال شد)
   BLOG_FAVICON: process.env.NEXT_PUBLIC_FAVICON || 'https://i.imgur.com/fPU4I4E.png',
