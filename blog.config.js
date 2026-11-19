@@ -15,6 +15,10 @@ const BLOG = {
   TITLE: process.env.NEXT_PUBLIC_TITLE || 'TRIX',
   THEME: process.env.NEXT_PUBLIC_THEME || 'fuwari', // قالب خیره‌کننده و مدرن
   LANG: process.env.NEXT_PUBLIC_LANG || 'fa-IR',
+  
+  // 🛠 رفع خطای بیلد (مقدار پیش‌فرض 86400 ثانیه = 1 روز)
+  NEXT_REVALIDATE_SECOND: process.env.NEXT_PUBLIC_REVALIDATE_SECOND || 86400,
+
   SINCE: process.env.NEXT_PUBLIC_SINCE || 2024,
   PSEUDO_STATIC: process.env.NEXT_PUBLIC_PSEUDO_STATIC || false,
   APPEARANCE: process.env.NEXT_PUBLIC_APPEARANCE || 'light',
