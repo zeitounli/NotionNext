@@ -6,10 +6,10 @@ const BLOG = {
   // 🌐 تنظیمات پایه API و اتصال به نوشن
   API_BASE_URL: process.env.API_BASE_URL || 'https://app.notion.com/api/v3',
   
-  // 🔑 شناسه صفحه اصلی نوشن شما
+  // 🔑 شناسه صفحه اصلی نوشن شما (به‌روزرسانی شده)
   NOTION_PAGE_ID:
     process.env.NOTION_PAGE_ID ||
-    '75d9ff6f9d0c83bfa77f01080e367462',
+    '4199ff6f9d0c80a48d89ead95afe28f0',
 
   // 🎨 تنظیمات ظاهری و برند
   TITLE: process.env.NEXT_PUBLIC_TITLE || 'TRIX',
