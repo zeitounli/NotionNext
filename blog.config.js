@@ -1,5 +1,5 @@
 // ═══════════════════════════════════════════════════════════════════════════
-// ✨ MAGNETLIFE CONFIGURATION ✨
+// ✨ TRIX CONFIGURATION ✨
 // ═══════════════════════════════════════════════════════════════════════════
 
 const BLOG = {
@@ -12,8 +12,8 @@ const BLOG = {
     '75d9ff6f9d0c83bfa77f01080e367462',
 
   // 🎨 تنظیمات ظاهری و برند
-  TITLE: process.env.NEXT_PUBLIC_TITLE || 'مگنتا لایف | بایو دیسک و درمان مغناطیسی',
-  THEME: process.env.NEXT_PUBLIC_THEME || 'nobelium', // تغییر به قالب مینیمال و بدون باگ
+  TITLE: process.env.NEXT_PUBLIC_TITLE || 'TRIX',
+  THEME: process.env.NEXT_PUBLIC_THEME || 'fuwari', // قالب خیره‌کننده و مدرن
   LANG: process.env.NEXT_PUBLIC_LANG || 'fa-IR',
   SINCE: process.env.NEXT_PUBLIC_SINCE || 2024,
   PSEUDO_STATIC: process.env.NEXT_PUBLIC_PSEUDO_STATIC || false,
@@ -21,10 +21,10 @@ const BLOG = {
   APPEARANCE_DARK_TIME: process.env.NEXT_PUBLIC_APPEARANCE_DARK_TIME || [18, 6],
 
   // 👤 اطلاعات نویسنده و برند 
-  AUTHOR: process.env.NEXT_PUBLIC_AUTHOR || '',
-  BIO: process.env.NEXT_PUBLIC_BIO || 'مرجع تخصصی بایو دیسک، مکمل درمانی مغناطیسی، احیای سلولی و سلامت. با ما مسیر درمان بدون دارو و بازگشت به سلامت را بشناسید.',
-  LINK: process.env.NEXT_PUBLIC_LINK || 'https://magnetlife.pages.dev',
-  KEYWORDS: process.env.NEXT_PUBLIC_KEYWORD || 'بایو دیسک, مکمل درمانی مغناطیسی, احیای سلولی, درمان مغناطیسی, سلامت, دیسک کمر, درمان بدون دارو',
+  AUTHOR: process.env.NEXT_PUBLIC_AUTHOR || 'TRIX Team',
+  BIO: process.env.NEXT_PUBLIC_BIO || 'برترین مرجع آموزش ترید، روانشناسی بازار و مدیریت سرمایه.',
+  LINK: process.env.NEXT_PUBLIC_LINK || 'https://trix.vercel.app',
+  KEYWORDS: process.env.NEXT_PUBLIC_KEYWORD || 'آموزش ترید, مدیریت سرمایه, روانشناسی ترید, TRIX, معامله گری',
   
   // 🖼️ لوگوی سایت
   BLOG_FAVICON: process.env.NEXT_PUBLIC_FAVICON || 'https://i.imgur.com/fPU4I4E.png',
@@ -71,7 +71,7 @@ const BLOG = {
 
   // 💬 چیدمان و ظاهر
   LAYOUT_SIDEBAR_REVERSE: process.env.NEXT_PUBLIC_LAYOUT_SIDEBAR_REVERSE || false,
-  GREETING_WORDS: process.env.NEXT_PUBLIC_GREETING_WORDS || 'به مگنتا لایف خوش آمدید, اینجا خانه دانش و فناوری است, با ما رشد کنید 🚀',
+  GREETING_WORDS: process.env.NEXT_PUBLIC_GREETING_WORDS || 'به TRIX خوش آمدید, اینجا خانه دانش ترید است, با ما رشد کنید 🚀',
   GREETING_WORDS_TYPE_SPEED: process.env.NEXT_PUBLIC_GREETING_WORDS_TYPE_SPEED || 200,
   GREETING_WORDS_BACK_SPEED: process.env.NEXT_PUBLIC_GREETING_WORDS_BACK_SPEED || 100,
 
