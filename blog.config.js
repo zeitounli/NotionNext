@@ -6,19 +6,16 @@ const BLOG = {
   // 🌐 تنظیمات پایه API و اتصال به نوشن
   API_BASE_URL: process.env.API_BASE_URL || 'https://app.notion.com/api/v3',
   
-  // 🔑 شناسه صفحه اصلی نوشن شما (به‌روزرسانی شده)
+  // 🔑 شناسه دیتابیس (نه صفحه!) نوشن شما
+  // این آیدی رو باید از توی لینک جدول Post کپی کنی (اون ۳۲ کاراکتر قبل از ?v=)
   NOTION_PAGE_ID:
     process.env.NOTION_PAGE_ID ||
-    '4199ff6f9d0c80a48d89ead95afe28f0',
+    '4199ff6f9d0c80a48d89ead95afe28f0', // ← این رو باید با آیدی جدول عوض کنی
 
   // 🎨 تنظیمات ظاهری و برند
   TITLE: process.env.NEXT_PUBLIC_TITLE || 'TRIX',
-  THEME: process.env.NEXT_PUBLIC_THEME || 'fuwari', // قالب خیره‌کننده و مدرن
+  THEME: process.env.NEXT_PUBLIC_THEME || 'fuwari',
   LANG: process.env.NEXT_PUBLIC_LANG || 'fa-IR',
-  
-  // 🛠 رفع خطای بیلد (مقدار پیش‌فرض 86400 ثانیه = 1 روز)
-  NEXT_REVALIDATE_SECOND: process.env.NEXT_PUBLIC_REVALIDATE_SECOND || 86400,
-
   SINCE: process.env.NEXT_PUBLIC_SINCE || 2024,
   PSEUDO_STATIC: process.env.NEXT_PUBLIC_PSEUDO_STATIC || false,
   APPEARANCE: process.env.NEXT_PUBLIC_APPEARANCE || 'light',
