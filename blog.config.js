@@ -7,14 +7,16 @@ const BLOG = {
   API_BASE_URL: process.env.API_BASE_URL || 'https://app.notion.com/api/v3',
   
   // 🔑 شناسه دیتابیس (جدول) نوشن شما
+  // فرمت چندزبانه: 'آیدی_اصلی,fa:آیدی_اصلی'
+  // بخش fa: به NotionNext می‌گوید وقتی کاربر از /fa بازدید می‌کند، از این دیتابیس استفاده کند و رابط را فارسی نمایش دهد [citation:1][citation:2]
   NOTION_PAGE_ID:
     process.env.NOTION_PAGE_ID ||
-    '41d9ff6f9d0c80f2adb3d2b85cdf2425',
+    '41d9ff6f9d0c80f2adb3d2b85cdf2425,fa:41d9ff6f9d0c80f2adb3d2b85cdf2425',
 
   // 🎨 تنظیمات ظاهری و برند
   TITLE: process.env.NEXT_PUBLIC_TITLE || 'TRIX',
-  THEME: process.env.NEXT_PUBLIC_THEME || 'nobelium', // تغییر به قالب مینیمال و بدون چینی
-  LANG: process.env.NEXT_PUBLIC_LANG || 'fa-IR',
+  THEME: process.env.NEXT_PUBLIC_THEME || 'nobelium',
+  LANG: process.env.NEXT_PUBLIC_LANG || 'fa-IR', // زبان پیش‌فرض فارسی
   
   // 🛠 رفع خطای بیلد (مقدار پیش‌فرض 86400 ثانیه = 1 روز)
   NEXT_REVALIDATE_SECOND: process.env.NEXT_PUBLIC_REVALIDATE_SECOND || 86400,
