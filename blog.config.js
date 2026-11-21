@@ -13,7 +13,7 @@ const BLOG = {
 
   // 🎨 تنظیمات ظاهری و برند
   TITLE: process.env.NEXT_PUBLIC_TITLE || 'TRIX',
-  THEME: process.env.NEXT_PUBLIC_THEME || 'fuwari', // قالب خیره‌کننده و مدرن
+  THEME: process.env.NEXT_PUBLIC_THEME || 'nobelium', // تغییر به قالب مینیمال و بدون چینی
   LANG: process.env.NEXT_PUBLIC_LANG || 'fa-IR',
   
   // 🛠 رفع خطای بیلد (مقدار پیش‌فرض 86400 ثانیه = 1 روز)
