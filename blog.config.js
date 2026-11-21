@@ -7,15 +7,15 @@ const BLOG = {
   API_BASE_URL: process.env.API_BASE_URL || 'https://app.notion.com/api/v3',
   
   // 🔑 شناسه دیتابیس (جدول) نوشن شما
-  // به فرمت ساده برگشتیم چون دیگه چندزبانه نمی‌خوایم
+  // ✅ اصلاح شد: اضافه کردن پیشوند en: برای اجبار به انگلیسی از طریق مسیر /en
   NOTION_PAGE_ID:
     process.env.NOTION_PAGE_ID ||
-    '41d9ff6f9d0c80f2adb3d2b85cdf2425',
+    '41d9ff6f9d0c80f2adb3d2b85cdf2425,en:41d9ff6f9d0c80f2adb3d2b85cdf2425',
 
   // 🎨 تنظیمات ظاهری و برند
   TITLE: process.env.NEXT_PUBLIC_TITLE || 'TRIX',
-  THEME: process.env.NEXT_PUBLIC_THEME || 'nobelium',
-  LANG: process.env.NEXT_PUBLIC_LANG || 'en-US', // ✅ انگلیسی شد
+  THEME: process.env.NEXT_PUBLIC_THEME || 'nobelium', // برای تمی که تست کردی میتونی اینجا رو هم 'opc' بذاری
+  LANG: process.env.NEXT_PUBLIC_LANG || 'en-US', // ✅ زبان پیش‌فرض انگلیسی
   
   // 🛠 رفع خطای بیلد (مقدار پیش‌فرض 86400 ثانیه = 1 روز)
   NEXT_REVALIDATE_SECOND: process.env.NEXT_PUBLIC_REVALIDATE_SECOND || 86400,
@@ -76,7 +76,7 @@ const BLOG = {
 
   // 💬 چیدمان و ظاهر
   LAYOUT_SIDEBAR_REVERSE: process.env.NEXT_PUBLIC_LAYOUT_SIDEBAR_REVERSE || false,
-  GREETING_WORDS: process.env.NEXT_PUBLIC_GREETING_WORDS || 'به TRIX خوش آمدید, اینجا خانه دانش ترید است, با ما رشد کنید 🚀',
+  GREETING_WORDS: process.env.NEXT_PUBLIC_GREETING_WORDS || 'Welcome to TRIX, the home of trading knowledge 🚀',
   GREETING_WORDS_TYPE_SPEED: process.env.NEXT_PUBLIC_GREETING_WORDS_TYPE_SPEED || 200,
   GREETING_WORDS_BACK_SPEED: process.env.NEXT_PUBLIC_GREETING_WORDS_BACK_SPEED || 100,
 
